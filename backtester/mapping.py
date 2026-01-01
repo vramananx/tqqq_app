@@ -67,6 +67,17 @@ def supported_main_tickers() -> list[str]:
         "UPRO","SPXL","SPXU","SSO","SDS",
         "UDOW","SDOW","DDM",
         "TNA","TZA","UWM",
-        "TMF","TMV",
+        "TMF","TMV", "QLD", "TSXU", "TTXU",
+        "NVDU", "AAPU", "AMDU",
+        "AMZU", "AVL", 
+        "BRKI",
+        "GGLL",
+        "METU",
+        "MSFU",
+        "MUU",
+        "ELIL",
+        "PALU",
+        "TSLL",
+        "TSMX",
     ]
     return sorted(set(keys))
