@@ -58,3 +58,15 @@ def guess_signal_ticker(risk_ticker: str) -> str:
     }
 
     return mapping.get(t, t)  # default: same ticker
+
+
+def supported_main_tickers() -> list[str]:
+    """Used by Streamlit dropdown."""
+    keys = [
+        "TQQQ","SQQQ","QLD",
+        "UPRO","SPXL","SPXU","SSO","SDS",
+        "UDOW","SDOW","DDM",
+        "TNA","TZA","UWM",
+        "TMF","TMV",
+    ]
+    return sorted(set(keys))
