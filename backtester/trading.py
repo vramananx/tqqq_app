@@ -18,7 +18,16 @@ class RunConfig:
 def _to_series(x) -> pd.Series:
     if isinstance(x, pd.Series):
         return x
-    raise TypeError("Expected pandas Series")
+    if isinstance(x, pd.DataFrame):
+        # accept 1-col dataframe or take Close if present
+        if "Close" in x.columns:
+            return x["Close"]
+        if "Adj Close" in x.columns:
+            return x["Adj Close"]
+        if x.shape[1] == 1:
+            return x.iloc[:, 0]
+    raise TypeError(f"Expected pandas Series, got {type(x)}")
+
 
 
 def _drawdown(equity: pd.Series) -> pd.Series:
