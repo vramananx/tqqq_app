@@ -1,0 +1,9 @@
+streamlit
+fastapi
+uvicorn
+pydantic
+yfinance
+pandas
+numpy
+plotly
+pyarrow
